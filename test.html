@@ -1,96 +1,171 @@
 <div class="container">
   <div class="sheet-col">
-    <img src="https://raw.githubusercontent.com/valeriabenetti/test_character_sheets/master/images/numeneralogo.png" height="350" width="350">
+    <img src="https://raw.githubusercontent.com/valeriabenetti/test_character_sheets/master/images/numeneralogo.png" align="center" height="350" width="350">
   </div>
-</div>
-<div class="containter">
-  <div class="column-center">
-    <div class="rvd">
-      <table width="30%" align="center">
-        <tbody style="border: 0px;">
+  <div class='sheet-3colrow'>
+    <div class='sheet-col'>
+      <div class="container">
+        <table>
+          <tbody>
+            <tr>
+              <td class="header" colspan="6">&bull;SKILLS&bull;</td>
+            </tr>
+            <tr>
+              <td class="skillbox">
+                <fieldset class="repeating_skills">
+                  <table align="center" width="100%">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <tr>
+                            <td><input type="text" name="attr_skill-name" style="width: 220px;"></td>
+                            <td><input type="checkbox" name="attr_trained-skill"><br>T</td>
+                            <td><input type="checkbox" name="attr_specialized-skill"><br>S</td>
+                          </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td class="header" colspan="2">&bull;ATTACKS&bull;</td>
+              <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack1"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DMG" name="attr_attackdmg1"></td>
+              <!-- Special Abilities -->
+              <td class="specialabilbox" rowspan="9"><textarea type="text" name="attr_special_abilities"></textarea></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack2"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg2"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack3"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg3"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack4"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg4"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack5"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg5"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack6"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg6"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack7"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg7"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack8"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg8"></td>
+            </tr>
+            <tr>
+              <td class="attackbox"><input type="text" name="attr_attack9"></td>
+              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg9"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class='sheet-col'>
+      <table width="100%" align="center">
+        <tbody class="recoveryrow">
           <tr>
-            <td class="header" colspan="10">&bull;ROLL VS A DIFFICULTY&bull;</td>
+            <td class="header" colspan="5">&bull;RECOVERY ROLLS&bull;</td>
           </tr>
           <tr>
-            <td class="rvdbx">Simple</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Diffuculty=Simple}} {{result=[[1d20>3]] Success}}"><b>1</b></button></td>
-            <td class="rvdbx">Initmidating</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Intimidating}} {{result=[[1d20>18]] Success}}"><b>6</b></button></td>
+            <td class="recovery"><input type="checkbox" name="attr_recovery_1action"></td>
+            <td class="recovery"><input type="checkbox" name="attr_recovery_10min"></td>
+            <td class="recoverycirclebox" rowspan="2"><button type="roll" name="roll_recovery" value="/roll 1d6+@{recoverybonus}" class="recoverybtn"><b>1d6+</b></button><input class="circle" type="text" name="attr_recoverybonus"></td>
+            <td class="recovery"><input type="checkbox" name="attr_recovery_1hr"></td>
+            <td class="recovery"><input type="checkbox" name="attr_recovery_10hr"></td>
           </tr>
           <tr>
-            <td class="rvdbx">Standard</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Standard}} {{result=[[1d20>6]] Success}}"><b>2</b></button></td>
-            <td class="rvdbx">Formidable</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Formidable}} {{result=[[1d20>21]] Success}}"><b>7</b></button></td>
+            <td class="recovery2">1 ACTION</td>
+            <td class="recovery2">10 MINS</td>
+            <td class="recovery2">1 HOUR</td>
+            <td class="recovery2">10 HOURS</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Damage Track -->
+      <table width="100%" align="center">
+        <tbody class="recoveryrow">
+          <tr>
+            <td class="header" colspan="2">&bull;DAMAGE TRACK&bull;</td>
           </tr>
           <tr>
-            <td class="rvdbx">Demanding</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Demanding}} {{result=[[1d20>9]] Success}}"><b>3</b></button></td>
-            <td class="rvdbx">Heroic</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Heroic}} {{result=[[1d20>24]] Success}}"><b>8</b></button></td>
+            <td class="dmgtrkchbx"><input type="checkbox" name="attr_impared"></td>
+            <td class="dmgtrk" rowspan="2">+1 EFFORT PER LEVEL<br/>IGNORE MINOR & MAJOR EFFECT RESULTS<br/>COMBAT ROLLS OF 17-20 ONLY DEAL +1DAMAGE</td>
           </tr>
           <tr>
-            <td class="rvdbx">Difficult</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Difficult}} {{result=[[1d20>12]] Success}}"><b>4</b></button></td>
-            <td class="rvdbx">Immortal</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Immortal}} {{result=[[1d20>27]] Success}}"><b>9</b></button></td>
+            <td class="dmgtrkchbx2">IMPAIRED</td>
+          </tr>
+          <td class="dmgtrkchbx"><input type="checkbox" name="attr_debilitated"></td>
+          <td class="dmgtrk" rowspan="2">CAN ONLY MOVE AN IMMEDIATE DISTANCE<br/>IF SPEED POOL IS ZERO YOU CANNOT MOVE</td>
           </tr>
           <tr>
-            <td class="rvdbx">Challenging</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Challenging}} {{result=[[1d20>15]] Success}}"><b>5</b></button></td>
-            <td class="rvdbx">Impossible</td>
-            <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Impossible}} {{result=[[1d20>30]] Success}}"><b>10</b></button></td>
+            <td class="dmgtrkchbx2">DEBILITATED</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="column-left">
-    <table width="100%" height="500px" align="center">
-      <tbody>
-        <tr>
-          <td class="header" colspan="6">&bull;SKILLS&bull;</td>
-        </tr>
-        <tr>
-          <td class="skillbox">
-            <fieldset class="repeating_skills">
-              <table align="center" width="100%">
-                <tbody>
-                  <tr>
-                    <td>
-                      <tr>
-                        <td><input type="text" name="attr_skill-name" style="width: 220px;"></td>
-                        <td><input type="checkbox" name="attr_trained-skill"><br>T</td>
-                        <td><input type="checkbox" name="attr_specialized-skill"><br>S</td>
-                      </tr>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </fieldset>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="column-right">
-    <div class="cyphers">
-      <table>
-        <tbody>
-          <tr>
-            <td class="header" colspan="2">&bull;CYPHERS&bull;</td>
-          </tr>
-          <tr>
-            <td class="cypherbox">
-              <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
-                <div class="limitcirclebox"><input class="orangecircle" type="text" name="attr_cypher-limit">
-                  <p class="orangecircle2">LIMIT</p>
+    <div class='sheet-col'>
+        <!-- Third column -->
+        <table width="100%" align="center">
+          <tbody>
+            <tr>
+              <td class="header" colspan="2">CYPHERS</td>
+            </tr>
+            <tr>
+              <td class="cypherbox">
+                <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
+                  <div class="limitcirclebox"><input class="orangecircle" type="text" name="attr_cypher-limit">
+                    <p class="orangecircle2">LIMIT</p>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="100%" align="center">
+          <tbody>
+            <tr>
+              <td class="header" colspan="2">ARTIFACTS/ODDITIES</td>
+            </tr>
+            <tr>
+              <td class="cypherbox">
+                <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="100%" align="center">
+          <tbody>
+            <tr>
+              <td class="header" colspan="2">EQUIPMENT</td>
+            </tr>
+            <tr>
+              <td class="cypherbox">
+                <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
     </div>
   </div>
 </div>
