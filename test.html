@@ -31,52 +31,6 @@
             </tr>
           </tbody>
         </table>
-        <table>
-          <tbody>
-            <tr>
-              <td class="header" colspan="2">&bull;ATTACKS&bull;</td>
-              <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack1"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DMG" name="attr_attackdmg1"></td>
-              <!-- Special Abilities -->
-              <td class="specialabilbox" rowspan="9"><textarea type="text" name="attr_special_abilities"></textarea></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack2"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg2"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack3"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg3"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack4"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg4"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack5"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg5"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack6"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg6"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack7"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg7"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack8"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg8"></td>
-            </tr>
-            <tr>
-              <td class="attackbox"><input type="text" name="attr_attack9"></td>
-              <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg9"></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
     <div class='sheet-col'>
@@ -123,7 +77,7 @@
       </table>
     </div>
     <div class='sheet-col'>
-        <!-- Third column -->
+        <!-- CYPHERS -->
         <table width="100%" align="center">
           <tbody>
             <tr>
@@ -131,15 +85,24 @@
             </tr>
             <tr>
               <td class="cypherbox">
-                <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
-                  <div class="limitcirclebox"><input class="orangecircle" type="text" name="attr_cypher-limit">
-                    <p class="orangecircle2">LIMIT</p>
-                  </div>
-                </div>
+                <fieldset class="repeating_skills">
+                  <table align="center" width="100%">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <tr>
+                            <input type="text" name="attr_cyper" style="width: 220px;">
+                          </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </fieldset>
               </td>
             </tr>
           </tbody>
         </table>
+        <!-- ARTIFACTS/ODDITIES-->
         <table width="100%" align="center">
           <tbody>
             <tr>
@@ -147,8 +110,19 @@
             </tr>
             <tr>
               <td class="cypherbox">
-                <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
-                </div>
+                <fieldset class="repeating_skills">
+                  <table align="center" width="100%">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <tr>
+                            <input type="text" name="attr_cyper">
+                          </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </fieldset>
               </td>
             </tr>
           </tbody>
