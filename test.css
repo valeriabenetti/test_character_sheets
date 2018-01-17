@@ -1,0 +1,23 @@
+.charsheet {
+    overflow: hidden;
+    font-family: times, sans-serif;
+    width: 842px;
+}
+
+.charsheet .sheet-rvd {
+    width: 39%;
+    display: inline-block;
+    vertical-align: top;
+}
+.charsheet .sheet-rvdbx {
+   background: none;
+   border: 0px;
+   text-align:right;
+   font-weight:bold;
+   font-size:18px;
+}
+.charsheet .sheet-rvdbtn {
+   background: none;
+   border: 0px;
+   text-align:left;
+}
