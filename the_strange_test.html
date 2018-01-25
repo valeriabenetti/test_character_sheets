@@ -179,6 +179,7 @@
           </tr>
         </tbody>
       </table>
+      <!-- Equipment -->
       <table width="100%" align="center">
         <tbody>
           <tr>
@@ -297,11 +298,11 @@
   </div>
 
   <script type="text/worker">
-    var update_attr = {};
+    on("sheet:opened", function(eventInfo) {
 
-    on("change:xp", function() {
-      update_attr("xp");
     })
+
+
   </script>
 
 </div>
