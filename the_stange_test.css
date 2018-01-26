@@ -160,19 +160,15 @@
 }
 
 .charsheet .sheet-attackbox {
-<<<<<<< HEAD
-  width: 40%;
-=======
-   width: 30%;
->>>>>>> b39717224fd911e1bc1f9f65ce438894a08385ba
+  width: 165px;
 }
 
 .charsheet .sheet-attackboxsmall {
-  width: 10%;
+  style="width: 45px;
 }
 
 .charsheet .sheet-specialabilbox {
-  width: 50%;
+  width: 165px;
 }
 
 .charsheet .sheet-equipmentbox {
