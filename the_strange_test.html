@@ -132,54 +132,44 @@
           </tr>
         </tbody>
       </table>
-      <!-- Attacks+Special Abilities -->
+      <!-- Attacks-->
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header" style="width:50%" colspan="2">&bull;ATTACKS&bull;</td>
-            <td class="header" style="width:50%">&bull;SPECIAL ABILITIES&bull;</td>
+            <td class="header" colspan="6">&bull;ATTACKS&bull;</td>
           </tr>
           <tr>
-            <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack1"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="MOD" name="attr_attackdmg1"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DMG" name="attr_attackdmg1"></td>
-            <!-- Special Abilities -->
-            <td class="specialabilbox" rowspan="9"><textarea type="text" name="attr_special_abilities"></textarea></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack2"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg2"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack3"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg3"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack4"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg4"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack5"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg5"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack6"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg6"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack7"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg7"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack8"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg8"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack9"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg9"></td>
+            <td class="skillbox">
+              <fieldset class="repeating_skills">
+                <table align="center" width="100%">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <tr>
+                          <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack-name"></td>
+                          <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="MOD" name="attr_attack-mod">
+                          <td class="attackboxsmall"><input class="centerinput" type="text" placeholder=""DGM name="attr_attack-dmg">
+                        </tr>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </fieldset>
+            </td>
           </tr>
         </tbody>
       </table>
+
+      <!-- Special Abilities-->
+      <table width="100%" align="center">
+        <tbody>
+          <tr>
+            <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
+          </tr>
+          <td></td>
+        </tbody>
+      </table>
+
       <!-- Equipment -->
       <table width="100%" align="center">
         <tbody>
@@ -312,6 +302,8 @@
     console.log("Testing Work!");
     var getRequest = ["version"],
 
+
+    // Updating and saving values for skills
     for(var x=1; x<22; x++){
       getRequest.push("checkboxt" + x);
       getRequest.push("checkboxs" + x);
