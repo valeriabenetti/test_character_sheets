@@ -168,7 +168,8 @@
 }
 
 .charsheet .sheet-specialabilbox {
-  width: 165px;
+  width: 100%;
+  height: 200px;
 }
 
 .charsheet .sheet-equipmentbox {

@@ -139,8 +139,8 @@
             <td class="header" colspan="6">&bull;ATTACKS&bull;</td>
           </tr>
           <tr>
-            <td class="skillbox">
-              <fieldset class="repeating_skills">
+            <td class="attackbox">
+              <fieldset class="repeating_attacks">
                 <table align="center" width="100%">
                   <tbody>
                     <tr>
@@ -148,7 +148,7 @@
                         <tr>
                           <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack-name"></td>
                           <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="MOD" name="attr_attack-mod">
-                          <td class="attackboxsmall"><input class="centerinput" type="text" placeholder=""DGM name="attr_attack-dmg">
+                          <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DGM" name="attr_attack-dmg">
                         </tr>
                       </td>
                     </tr>
@@ -166,7 +166,11 @@
           <tr>
             <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
           </tr>
-          <td></td>
+          <td class="specialabilbox">
+            <div class="orangeparent"><textarea type="text" name="attr_special_abilites"></textarea>
+
+            </div>
+          </td>
         </tbody>
       </table>
 
@@ -303,12 +307,12 @@
     var getRequest = ["version"],
 
 
-    // Updating and saving values for skills
+    // Updating, adding, and saving values for skills
     for(var x=1; x<22; x++){
       getRequest.push("checkboxt" + x);
       getRequest.push("checkboxs" + x);
       getRequest.push("skill" + x);
-    }
+    };
     getAttrs(getRequest, function(values){
       if(!values.version){
         console.log("Updating to v. 1.0");
@@ -319,15 +323,54 @@
             newrowattrs["repeating_skills_" + rowId + "_skill-name"] = values["skill" + x];
             if(values["checkboxt" + x]) {
               newrowattrs["repeating_skills_" + rowId + "_trained-skill"] = values["checkboxt" + x];
-            }
+            };
             if(values["checkboxt" + x]) {
               newrowattrs["repeating_skills_" + rowId + "_specialized-skill"] = values["checkboxs" + x];
-            }
-          }
-        }
+            };
+          };
+        };
         setAttrs(newrowattrs);
-      }
+      };
     });
+
+    // For removing a value in skills
+    on("remove:repeating_skills", function(eventInfo){
+      console.log(eventinfo.removedInfo);
+      var skillid = eventinfo.sourceAttribute
+    });
+    // Updating, adding, and saving the attacks
+    for(var y=1; y<10; y++){
+      getRequest.push("attack" + y);
+      getRequest.push("mod" + y);
+      getRequest.push("dmg" + y);
+    }
+    getAttrs(getRequest, function(values){
+      if(!values.version){
+        console.log("Saved Correctly!!!");
+        var newrowattrs = {version: 1.0};
+        for(var y=1; y<10; y++){
+          if(values["attack" + y]){
+            var rowId = generateRowID();
+            newrowattrs["repeating_attacks_" + rowId + "_attack-name"] = values["attack" + y];
+            if(values["mod" + y]) {
+              newrowattrs["repeating_attacks_" + rowId + "_attack-mod"] = values["mod" + y];
+            };
+            if(values["dmg" + y]){
+              newrowattrs["repeating_attacks_" + rowId + "_attack-dmg"] = values["dmg" + y];
+            };
+          };
+        };
+        setAttrs(newrowattrs);
+      };
+    });
+
+    // For removing a value in the attack section
+    on("remove:repeating_attacks", function(eventInfo){
+      console.log(eventinfo.removedInfo);
+      var attackid = eventinfo.sourceAttribute
+    });
+
+
 
 
   });
