@@ -4,7 +4,7 @@
   <!-- Header+Tier+Effort+XP -->
   <div>
     <div class="sheet-col">
-      <img src="#" align="center">
+      <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/The%20Strange/images/The%20Strange%20Logo/The-Strange-Logo-Color-Large.png" align="center">
     </div>
     <div class="sheet-col">
       <table width="100%" height="200px" align="center">
@@ -27,11 +27,11 @@
   <div>
     <!-- Name+Desc+Type -->
     <div class="charinfo">
-      <input name="attr_character_name" class="primary" type="text" placeholder="NAME" style="width: 300px;"><br/><label class="spacer"></label></br>
+      <input name="attr_character_name" class="primary" type="text" placeholder="NAME" style="width: 300px;"><label class="spacer"></label>
       <h3 style="display: inline;"> IS A </h3>
       <input name="attr_descriptor" class="primary" type="text" placeholder="DESCRIPTOR" style="width: 200px;">
       <input name="attr_type" class="primary" type="text" placeholder="TYPE" style="width: 150px;">
-      <h3 style="display: inline;"> WHO</h3><br/><label class="spacer"></label></br>
+      <h3 style="display: inline;"> WHO</h3><label class="spacer"></label>
       <input name="attr_focus" class="primary" type="text" placeholder="FOCUS" style="width: 250px;">
       <h3 style="display: inline;"> ON </h3>
       <input name="attr_recursion" class="primary" type="text" placeholder="RECURSION" style="width: 150px;">
@@ -132,53 +132,49 @@
           </tr>
         </tbody>
       </table>
-      <!-- Attacks+Special Abilities -->
+      <!-- Attacks-->
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header" style="width:50%" colspan="2">&bull;ATTACKS&bull;</td>
-            <td class="header" style="width:50%">&bull;SPECIAL ABILITIES&bull;</td>
+            <td class="header" colspan="6">&bull;ATTACKS&bull;</td>
           </tr>
           <tr>
-            <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack1"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DMG" name="attr_attackdmg1"></td>
-            <!-- Special Abilities -->
-            <td class="specialabilbox" rowspan="9"><textarea type="text" name="attr_special_abilities"></textarea></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack2"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg2"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack3"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg3"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack4"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg4"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack5"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg5"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack6"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg6"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack7"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg7"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack8"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg8"></td>
-          </tr>
-          <tr>
-            <td class="attackbox"><input type="text" name="attr_attack9"></td>
-            <td class="attackboxsmall"><input class="centerinput" type="text" name="attr_attackdmg9"></td>
+            <td class="attackbox">
+              <fieldset class="repeating_attacks">
+                <table align="center" width="100%">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <tr>
+                          <td class="attackbox"><input type="text" placeholder="ATTACK" name="attr_attack-name"></td>
+                          <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="MOD" name="attr_attack-mod">
+                            <td class="attackboxsmall"><input class="centerinput" type="text" placeholder="DGM" value="/roll @{attack-dmg}" name="attr_attack-dmg">
+                        </tr>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </fieldset>
+              </td>
           </tr>
         </tbody>
       </table>
+
+      <!-- Special Abilities-->
+      <table width="100%" align="center">
+        <tbody>
+          <tr>
+            <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
+          </tr>
+          <td class="specialabilbox">
+            <div class="orangeparent"><textarea type="text" name="attr_special_abilites"></textarea>
+
+            </div>
+          </td>
+        </tbody>
+      </table>
+
+      <!-- Equipment -->
       <table width="100%" align="center">
         <tbody>
           <tr>
@@ -296,10 +292,22 @@
 
   </div>
 
+
 </div>
 
 <div class="footer" style="font-size: 10px; color: rgb(165, 165, 165);">
   <span>
-        &copy;2015 Monte Cook Games, LLC. Numenera are trademarks of Monte Cook Games, LLC, in the U.S.A. and other countries. All Monte Cook Games characters and character names, and the distinctive likeness thereof, are trademarks of Monte Cook Games, LLC.
+        &copy;2015 Monte Cook Games, LLC. The Strange are trademarks of Monte Cook Games, LLC, in the U.S.A. and other countries. All Monte Cook Games characters and character names, and the distinctive likeness thereof, are trademarks of Monte Cook Games, LLC.
     </span>
 </div>
+
+<script type="text/worker">
+  on("sheet:opened", function() { console.log("Testing Work!"); var getRequest = ["version"], // Updating, adding, and saving values for skills for(var x=1; x
+  <22; x++){ getRequest.push( "checkboxt" + x); getRequest.push( "checkboxs" + x); getRequest.push(
+    "skill" + x); }; getAttrs(getRequest, function(values){ if(!values.version){ console.log( "Updating to v. 1.0"); var newrowattrs={ version: 1.0}; for(var x=1; x<22; x++){ if(values[ "skill" + x]){ var rowId=g enerateRowID(); newrowattrs[
+    "repeating_skills_" + rowId + "_skill-name"]=v alues[ "skill" + x]; if(values[ "checkboxt" + x]) { newrowattrs[ "repeating_skills_" + rowId + "_trained-skill"]=v alues[ "checkboxt" + x]; }; if(values[ "checkboxt" + x]) { newrowattrs[ "repeating_skills_" + rowId +
+    "_specialized-skill"]=v alues[ "checkboxs" + x]; }; }; }; setAttrs(newrowattrs); }; }); // For removing a value in skills on( "remove:repeating_skills", function(eventInfo){ console.log(eventinfo.removedInfo); var skillid=e ventinfo.sourceAttribute }); // Updating, adding,
+    and saving the attacks for(var y=1; y<10; y++){ getRequest.push( "attack" + y); getRequest.push( "mod" + y); getRequest.push( "dmg" + y); } getAttrs(getRequest, function(values){ if(!values.version){ console.log( "Saved Correctly!!!"); var newrowattrs={
+    version: 1.0}; for(var y=1; y<10; y++){ if(values[ "attack" + y]){ var rowId=g enerateRowID(); newrowattrs[ "repeating_attacks_" + rowId + "_attack-name"]=v alues[ "attack" + y]; if(values[ "mod" + y]) { newrowattrs[ "repeating_attacks_" + rowId +
+    "_attack-mod"]=v alues[ "mod" + y]; }; if(values[ "dmg" + y]){ newrowattrs[ "repeating_attacks_" + rowId + "_attack-dmg"]=v alues[ "dmg" + y]; }; }; }; setAttrs(newrowattrs); }; }); // For removing a value in the attack section on( "remove:repeating_attacks", function(eventInfo){
+    console.log(eventinfo.removedInfo); var attackid=e ventinfo.sourceAttribute }); }); </script>
