@@ -302,12 +302,69 @@
 </div>
 
 <script type="text/worker">
-  on("sheet:opened", function() { console.log("Testing Work!"); var getRequest = ["version"], // Updating, adding, and saving values for skills for(var x=1; x
-  <22; x++){ getRequest.push( "checkboxt" + x); getRequest.push( "checkboxs" + x); getRequest.push(
-    "skill" + x); }; getAttrs(getRequest, function(values){ if(!values.version){ console.log( "Updating to v. 1.0"); var newrowattrs={ version: 1.0}; for(var x=1; x<22; x++){ if(values[ "skill" + x]){ var rowId=g enerateRowID(); newrowattrs[
-    "repeating_skills_" + rowId + "_skill-name"]=v alues[ "skill" + x]; if(values[ "checkboxt" + x]) { newrowattrs[ "repeating_skills_" + rowId + "_trained-skill"]=v alues[ "checkboxt" + x]; }; if(values[ "checkboxt" + x]) { newrowattrs[ "repeating_skills_" + rowId +
-    "_specialized-skill"]=v alues[ "checkboxs" + x]; }; }; }; setAttrs(newrowattrs); }; }); // For removing a value in skills on( "remove:repeating_skills", function(eventInfo){ console.log(eventinfo.removedInfo); var skillid=e ventinfo.sourceAttribute }); // Updating, adding,
-    and saving the attacks for(var y=1; y<10; y++){ getRequest.push( "attack" + y); getRequest.push( "mod" + y); getRequest.push( "dmg" + y); } getAttrs(getRequest, function(values){ if(!values.version){ console.log( "Saved Correctly!!!"); var newrowattrs={
-    version: 1.0}; for(var y=1; y<10; y++){ if(values[ "attack" + y]){ var rowId=g enerateRowID(); newrowattrs[ "repeating_attacks_" + rowId + "_attack-name"]=v alues[ "attack" + y]; if(values[ "mod" + y]) { newrowattrs[ "repeating_attacks_" + rowId +
-    "_attack-mod"]=v alues[ "mod" + y]; }; if(values[ "dmg" + y]){ newrowattrs[ "repeating_attacks_" + rowId + "_attack-dmg"]=v alues[ "dmg" + y]; }; }; }; setAttrs(newrowattrs); }; }); // For removing a value in the attack section on( "remove:repeating_attacks", function(eventInfo){
-    console.log(eventinfo.removedInfo); var attackid=e ventinfo.sourceAttribute }); }); </script>
+  on("sheet:opened", function() {
+    console.log("Testing Work!");
+    var getRequest = ["version"];
+
+
+    // UPdating, adding, and saving values for skills
+    for(var x=1; x<22; x++){
+      getRequest.push("checkboxt" + x);
+      getRequest.push("checkboxs" + x);
+      getRequest.push("skill" + x); };
+    };
+    getAttrs(getRequest, function(values){
+      if(!values.version){
+        console.log("Updating to v. 1.0");
+        var newrowattrs = { version: 1.0};
+        for(var x=1; x<22; x++){
+          if(values["skill" + x]){
+            var rowId=g enerateRowID();
+            newrowattrs[ "repeating_skills_" + rowId + "_skill-name"]= values["skill" + x];
+            if(values["checkboxt" + x]) {
+              newrowattrs["repeating_skills_" + rowId + "_trained-skill"] = values["checkboxt" + x];
+            };
+            if(values["checkboxt" + x]) {
+              newrowattrs["repeating_skills_" + rowId + "_specialized-skill"] = values[ "checkboxs" + x];
+            };
+          };
+        };
+        setAttrs(newrowattrs);
+      };
+    });
+    // For removing a value in skills
+    on("remove:repeating_skills", function(eventInfo){
+      console.log(eventinfo.removedInfo);
+      var skillid = eventinfo.sourceAttribute
+    });
+    // Updating, adding, and saving the attacks
+    for(var y=1; y<10; y++){
+      getRequest.push("attack" + y);
+      getRequest.push("mod" + y);
+      getRequest.push("dmg" + y);
+    }
+    getAttrs(getRequest, function(values){
+      if(!values.version){
+        console.log("Saved Correctly!!!");
+        var newrowattrs = { version: 1.0};
+        for(var y=1; y<10; y++){
+          if(values[ "attack" + y]){
+            var rowId = generateRowID();
+            newrowattrs["repeating_attacks_" + rowId + "_attack-name"] = values["attack" + y];
+            if(values[ "mod" + y]){
+              newrowattrs["repeating_attacks_" + rowId + "_attack-mod"] = values["mod" + y]; };
+              if(values["dmg" + y]){
+                newrowattrs["repeating_attacks_" + rowId + "_attack-dmg"] = values["dmg" + y];
+              };
+            };
+          };
+          setAttrs(newrowattrs);
+    };
+  }); 
+    // For removing a value in the attack section
+    on( "remove:repeating_attacks", function(eventInfo){
+      console.log(eventinfo.removedInfo);
+      var attackid = eventinfo.sourceAttribute
+    });
+  });
+</script>
