@@ -51,27 +51,27 @@
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Intimidating}} {{result=[[1d20>18]] Success}}"><b>6</b></button></td>
           </tr>
           <tr>
-            <td class="rvdbx">Standard</td>
+            <td class="rvdbx" data-i18n="standard">Standard</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Standard}} {{result=[[1d20>6]] Success}}"><b>2</b></button></td>
-            <td class="rvdbx">Formidable</td>
+            <td class="rvdbx" data-i18n="formidable">Formidable</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Formidable}} {{result=[[1d20>21]] Success}}"><b>7</b></button></td>
           </tr>
           <tr>
-            <td class="rvdbx">Demanding</td>
+            <td class="rvdbx" data-i18n="demanding">Demanding</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Demanding}} {{result=[[1d20>9]] Success}}"><b>3</b></button></td>
-            <td class="rvdbx">Heroic</td>
+            <td class="rvdbx" data-i18n="heroic">Heroic</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Heroic}} {{result=[[1d20>24]] Success}}"><b>8</b></button></td>
           </tr>
           <tr>
-            <td class="rvdbx">Difficult</td>
+            <td class="rvdbx" data-i18n="difficult">Difficult</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Difficult}} {{result=[[1d20>12]] Success}}"><b>4</b></button></td>
-            <td class="rvdbx">Immortal</td>
+            <td class="rvdbx" data-i18n="immortal">Immortal</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Immortal}} {{result=[[1d20>27]] Success}}"><b>9</b></button></td>
           </tr>
           <tr>
-            <td class="rvdbx">Challenging</td>
+            <td class="rvdbx" data-i18n="challenging">Challenging</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Challenging}} {{result=[[1d20>15]] Success}}"><b>5</b></button></td>
-            <td class="rvdbx">Impossible</td>
+            <td class="rvdbx" data-i18n="impossible">Impossible</td>
             <td class="rvdbtn"><button type="roll" value="&{template:default} {{name=@{character_name}}} {{Difficulty=Impossible}} {{result=[[1d20>30]] Success}}"><b>10</b></button></td>
           </tr>
         </tbody>
@@ -86,9 +86,9 @@
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header" colspan="2" width="33%">&bull;MIGHT&bull;</td>
-            <td class="header" colspan="2" width="33%">&bull;SPEED&bull;</td>
-            <td class="header" colspan="2" width="33%">&bull;INTELLECT&bull;</td>
+            <td class="header" colspan="2" width="33%" data-i18n="might">&bull;MIGHT&bull;</td>
+            <td class="header" colspan="2" width="33%" data-i18n="speed">&bull;SPEED&bull;</td>
+            <td class="header" colspan="2" width="33%" data-i18n="intellect">&bull;INTELLECT&bull;</td>
           </tr>
           <tr>
             <td class="attrbox" colspan="2"><span class="circle" type="text" name="attr_mightpool"></span></td>
@@ -109,7 +109,7 @@
       <table width="100%" height="500px" align="center">
         <tbody>
           <tr>
-            <td class="header" colspan="6">&bull;SKILLS&bull;</td>
+            <td class="header" colspan="6" data-i18n="skills">&bull;SKILLS&bull;</td>
           </tr>
           <tr>
             <td class="skillbox">
@@ -119,7 +119,7 @@
                     <tr>
                       <td>
                         <tr>
-                          <td><input type="text" name="attr_skill-name" style="width: 220px;"></td>
+                          <td><input type="text" name="attr_skill-name" placeholder="SKILL NAME" style="width: 220px;"></td>
                           <td><input type="checkbox" name="attr_trained-skill"><br>T</td>
                           <td><input type="checkbox" name="attr_specialized-skill"><br>S</td>
                         </tr>
@@ -136,7 +136,7 @@
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header" colspan="6">&bull;ATTACKS&bull;</td>
+            <td class="header" colspan="6" data-i18n="attacks">&bull;ATTACKS&bull;</td>
           </tr>
           <tr>
             <td class="attackbox">
@@ -164,7 +164,7 @@
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header">&bull;SPECIAL ABILITIES&bull;</td>
+            <td class="header" data-i18n="special_abilities">&bull;SPECIAL ABILITIES&bull;</td>
           </tr>
           <td class="specialabilbox">
             <div class="orangeparent"><textarea type="text" name="attr_special_abilites"></textarea>
@@ -178,16 +178,16 @@
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header">&bull;EQUIPMENT&bull;</td>
+            <td class="header" data-i18n="equipment">&bull;EQUIPMENT&bull;</td>
           </tr>
           <tr>
             <td class="equipmentbox">
               <div class="orangeparent"><textarea type="text" name="attr_equipment">                  &#13;&#10;                  &#13;&#10;                  &#13;&#10;                  &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;</textarea>
                 <div class="armorcirclebox"><input class="orangecircle" type="text" name="attr_armor">
-                  <p class="orangecircle2">ARMOR</p>
+                  <p class="orangecircle2" data-i18n="armor">ARMOR</p>
                 </div>
                 <div class="moneycirclebox"><input class="orangecircle" type="text" name="attr_money">
-                  <p class="orangecircle2">MONEY</p>
+                  <p class="orangecircle2" data-i18n="money">MONEY</p>
                 </div>
               </div>
             </td>
@@ -201,13 +201,13 @@
       <table width="100%" align="center">
         <tbody>
           <tr>
-            <td class="header" colspan="2">&bull;CYPHERS&bull;</td>
+            <td class="header" colspan="2" data-i18n="cyphers">&bull;CYPHERS&bull;</td>
           </tr>
           <tr>
             <td class="cypherbox">
               <div class="orangeparent"><textarea type="text" name="attr_cyper"></textarea>
                 <div class="limitcirclebox"><input class="orangecircle" type="text" name="attr_cypher-limit">
-                  <p class="orangecircle2">LIMIT</p>
+                  <p class="orangecircle2" data-i18n="limit">LIMIT</p>
                 </div>
               </div>
             </td>
@@ -218,7 +218,7 @@
       <table width="100%" align="center">
         <tbody class="recoveryrow">
           <tr>
-            <td class="header" colspan="5">&bull;RECOVERY ROLLS&bull;</td>
+            <td class="header" colspan="5" data-i18n="recovery_roll">&bull;RECOVERY ROLLS&bull;</td>
           </tr>
           <tr>
             <td class="recovery"><input type="checkbox" name="attr_recovery_1action"></td>
@@ -228,10 +228,10 @@
             <td class="recovery"><input type="checkbox" name="attr_recovery_10hr"></td>
           </tr>
           <tr>
-            <td class="recovery2">1 ACTION</td>
-            <td class="recovery2">10 MINS</td>
-            <td class="recovery2">1 HOUR</td>
-            <td class="recovery2">10 HOURS</td>
+            <td class="recovery2" data-i18n="action">1 ACTION</td>
+            <td class="recovery2" data-i18n="minutes">10 MINS</td>
+            <td class="recovery2" data-i18n="hour">1 HOUR</td>
+            <td class="recovery2" data-i18n="hours">10 HOURS</td>
           </tr>
         </tbody>
       </table>
@@ -239,20 +239,20 @@
       <table width="100%" align="center">
         <tbody class="recoveryrow">
           <tr>
-            <td class="header" colspan="2">&bull;DAMAGE TRACK&bull;</td>
+            <td class="header" colspan="2" data-i18n="damage_track">&bull;DAMAGE TRACK&bull;</td>
           </tr>
           <tr>
             <td class="dmgtrkchbx"><input type="checkbox" name="attr_impared"></td>
-            <td class="dmgtrk" rowspan="2">+1 EFFORT PER LEVEL<br/>IGNORE MINOR & MAJOR EFFECT RESULTS<br/>COMBAT ROLLS OF 17-20 ONLY DEAL +1DAMAGE</td>
+            <td class="dmgtrk" rowspan="2" data-i18n="dmgtrk-text">+1 EFFORT PER LEVEL<br/>IGNORE MINOR & MAJOR EFFECT RESULTS<br/>COMBAT ROLLS OF 17-20 ONLY DEAL +1 DAMAGE</td>
           </tr>
           <tr>
-            <td class="dmgtrkchbx2">IMPAIRED</td>
+            <td class="dmgtrkchbx2" data-i18n="impaired">IMPAIRED</td>
           </tr>
           <td class="dmgtrkchbx"><input type="checkbox" name="attr_debilitated"></td>
-          <td class="dmgtrk" rowspan="2">CAN ONLY MOVE AN IMMEDIATE DISTANCE<br/>IF SPEED POOL IS ZERO YOU CANNOT MOVE</td>
+          <td class="dmgtrk" rowspan="2" data-i18n="debilitated_text">CAN ONLY MOVE AN IMMEDIATE DISTANCE<br/>IF SPEED POOL IS ZERO YOU CANNOT MOVE</td>
           </tr>
           <tr>
-            <td class="dmgtrkchbx2">DEBILITATED</td>
+            <td class="dmgtrkchbx2" data-i18n="debilitated">DEBILITATED</td>
           </tr>
         </tbody>
       </table>
@@ -260,10 +260,10 @@
       <table width="100%" align="center">
         <tbody class="recoveryrow">
           <tr>
-            <td class="header" colspan="5">&bull;ADVANCEMENT&bull;</td>
+            <td class="header" colspan="5" data-i18n="advancement">&bull;ADVANCEMENT&bull;</td>
           </tr>
           <tr>
-            <td class="dmgtrkchbx" colspan="5">(You must have four of these to advance in Tier. Cost = 4XP each.</td>
+            <td class="dmgtrkchbx" colspan="5" data-i18n="dmgtrkchbx-text">(You must have four of these to advance in Tier. Cost = 4XP each.)</td>
           </tr>
           <tr>
             <td class="dmgtrkchbx"><input type="checkbox" name="attr_increase_capabilities"></td>
@@ -273,7 +273,7 @@
             <td class="dmgtrkchbx"><input type="checkbox" name="attr_other"></td>
           </tr>
           <tr>
-            <td class="dmgtrkchbx2">INCREASE CAPABILITIES</td>
+            <td class="dmgtrkchbx2" data-i18n="increase_capabilities">INCREASE CAPABILITIES</td>
             <td class="dmgtrkchbx2">MOVE TOWARDS PERFECTION</td>
             <td class="dmgtrkchbx2">EXTRA EFFORT</td>
             <td class="dmgtrkchbx2">SKILL TRAINING</td>
@@ -370,6 +370,11 @@
       var attackid = eventinfo.sourceAttribute
     });
 
+    // For removing a value in skills
+    on("remove:repeating_skills", function(eventInfo){
+      console.log(eventInfo.removedInfo);
+      var skillid = eventInfo.sourceAttribute
+    })
 
 
 
