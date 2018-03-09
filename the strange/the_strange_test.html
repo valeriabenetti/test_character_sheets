@@ -367,15 +367,25 @@
     // For removing a value in the attack section
     on("remove:repeating_attacks", function(eventInfo){
       console.log(eventinfo.removedInfo);
-      var attackid = eventinfo.sourceAttribute
+      // var attackid = eventinfo.sourceAttribute
     });
+
+    on("change:repeating_attacks", function() {
+      // Something happens here
+    })
+
+
+
 
     // For removing a value in skills
     on("remove:repeating_skills", function(eventInfo){
       console.log(eventInfo.removedInfo);
-      var skillid = eventInfo.sourceAttribute
+      // var skillid = eventInfo.sourceAttribute
     })
 
+    on("change:repeating_skills", function() {
+      // Something happens here
+    })
 
 
   });
