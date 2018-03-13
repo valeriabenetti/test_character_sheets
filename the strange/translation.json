@@ -1,4 +1,12 @@
 {
+  "name" : "NAME",
+  "is-a" : "IS A",
+  "descriptor" : "DESCRIPTOR",
+  "type" : "TYPE",
+  "who" : "WHO",
+  "focus" : "FOCUS",
+  "on" : "ON",
+  "recursion" : "RECURSION",
   "tier" : "TIER",
   "effort" : "EFFORT",
   "xp" : "XP",
