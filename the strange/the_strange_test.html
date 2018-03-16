@@ -311,13 +311,17 @@
 
 
     // Updating, adding, and saving values for skills
+    // Move this to after the version check
     for(var x=1; x<22; x++){
       getRequest.push("checkboxt" + x);
       getRequest.push("checkboxs" + x);
       getRequest.push("skill" + x);
     };
+    
+    //This get is too big. Just get "version" first to check if the upgrade needs to be done
     getAttrs(getRequest, function(values){
       if(!values.version){
+        //put your second get request here
         console.log("Updating to v. 1.0");
         var newrowattrs = {version: 1.0};
         for(var x=1; x<22; x++){
@@ -339,6 +343,7 @@
 
     on("change:repeating_skills", function() {
       // Something happens here
+      // Remove this, not necessary
     })
 
 
@@ -347,11 +352,13 @@
 
 
     // Updating, adding, and saving the attacks
+    // Move this to after the version check
     for(var y=1; y<10; y++){
       getRequest.push("attack" + y);
       getRequest.push("mod" + y);
       getRequest.push("dmg" + y);
     }
+    //Move this to after the version check, and combine it with the get for skills
     getAttrs(getRequest, function(values){
       if(!values.version){
         console.log("Saved Correctly!!!");
@@ -374,6 +381,7 @@
 
     on("change:repeating_attacks", function() {
       // Something happens here
+      // Remove this, not necessary
     })
 
   });
@@ -382,6 +390,7 @@
   // For removing a value in skills
   on("remove:repeating_skills", function(eventInfo){
     // Something happens here
+    // Remove this, not necessary
   });
 
 
@@ -389,6 +398,7 @@
   // For removing a value in the attack section
   on("remove:repeating_attacks", function(eventInfo){
     // Something happens here
+    // Remove this, not necessary
   });
 
 
