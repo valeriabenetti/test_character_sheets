@@ -306,7 +306,6 @@
 
 <script type="text/worker">
   on("sheet:opened", function() {
-    console.log("Testing Work!");
     var getRequest = ["version"],
 
     //This get is too big. Just get "version" first to check if the upgrade needs to be done
@@ -357,6 +356,7 @@
           };
         };
         setAttrs(newrowattrs);
+        getAttrs(getRequest);
       };
     });
 </script>
