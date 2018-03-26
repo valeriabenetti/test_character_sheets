@@ -110,22 +110,22 @@
 }
 
 .charsheet .sheet-header {
-   background: #000066;
-   color: #FFFFFF;
+   background: #fefbf6;
+   color: #000000;
    border: 1px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
    height: 12px;
    font-size: 16px;
    text-align: center;
 }
 
 .charsheet .sheet-smallheader {
-   background: #FFFFFF;
+   background: #000000;
    color: #000000;
    border: 3px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
    height: 12px;
    width: 16%;
    font-size: 8px;
@@ -136,7 +136,7 @@
    color: #000000;
    border: 3px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
 }
 
 .charsheet td {
@@ -144,7 +144,7 @@
    color: #000000;
    border: 1px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
 }
 
 .charsheet .sheet-attrbox {
@@ -182,7 +182,7 @@
    height: 544px;
    border: 3px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
 }
 
 .charsheet .sheet-recovery {
@@ -223,7 +223,7 @@
 .charsheet .sheet-recoveryrow {
    border: 3px;
    border-style: solid;
-   border-color: #000066;
+   border-color: #000000;
    text-align: center;
 }
 
