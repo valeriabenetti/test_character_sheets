@@ -307,29 +307,27 @@
 <script type="text/worker">
   on("sheet:opened", function() {
     var getRequest = ["version"],
+    console.log(getRequest);
 
-    //This get is too big. Just get "version" first to check if the upgrade needs to be done
     getAttrs(getRequest, function(values){
       if(!values.version){
+      };
+    });
 
-        // Updating, adding, and saving values for skills
-        // Move this to after the version check
-        for(var x=1; x<22; x++){
-          getRequest.push("checkboxt" + x);
-          getRequest.push("checkboxs" + x);
-          getRequest.push("skill" + x);
-        };
+    for(var x=1; x<22; x++){
+      getRequest.push("checkboxt" + x);
+      getRequest.push("checkboxs" + x);
+      getRequest.push("skill" + x);
+    };
 
-        // Updating, adding, and saving the attacks
-        // Move this to after the version check
-        for(var y=1; y<10; y++){
-          getRequest.push("attack" + y);
-          getRequest.push("mod" + y);
-          getRequest.push("dmg" + y);
-        }
+    for(var y=1; y<10; y++){
+      getRequest.push("attack" + y);
+      getRequest.push("mod" + y);
+      getRequest.push("dmg" + y);
+    };
 
+    getAttrs(getRequest, function(values) {
         //put your second get request here
-        console.log("Updating to v. 1.0");
         var newrowattrs = {version: 1.0};
         for(var x=1; x<22; x++){
           if(values["skill" + x]){
@@ -357,7 +355,11 @@
             };
           };
         };
+<<<<<<< HEAD
         setAttrs(newrowattrs);
       };
+=======
+      setAttrs(newrowattrs);
+>>>>>>> c1bf040bed48abce20e04b8e2bf427ae09c0230e
     });
 </script>
