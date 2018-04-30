@@ -343,6 +343,8 @@
             };
           };
         };
+        setAttrs(newrowattrs);
+
         for(var y=1; y<10; y++){
           if(values["attack" + y]){
             var rowId = generateRowID();
@@ -356,7 +358,6 @@
           };
         };
         setAttrs(newrowattrs);
-        getAttrs(getRequest);
       };
     });
 </script>
