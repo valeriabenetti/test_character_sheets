@@ -311,7 +311,11 @@
 
     getAttrs(getRequest, function(values){
       if(!values.version){
+        getAttrs
+      else(values.version)
       };
+      console.log(getRequest);
+      console.log("MEOW!! This is version" + getRequest)
     });
 
     for(var x=1; x<22; x++){
@@ -341,8 +345,6 @@
             };
           };
         };
-        setAttrs(newrowattrs);
-
         for(var y=1; y<10; y++){
           if(values["attack" + y]){
             var rowId = generateRowID();
@@ -355,11 +357,6 @@
             };
           };
         };
-<<<<<<< HEAD
-        setAttrs(newrowattrs);
-      };
-=======
       setAttrs(newrowattrs);
->>>>>>> c1bf040bed48abce20e04b8e2bf427ae09c0230e
     });
 </script>
