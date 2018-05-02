@@ -306,57 +306,51 @@
 
 <script type="text/worker">
   on("sheet:opened", function() {
-    var getRequest = ["version"],
-    console.log(getRequest);
+    var getRequest = ["version"];
 
     getAttrs(getRequest, function(values){
       if(!values.version){
-        getAttrs
-      else(values.version)
-      };
-      console.log(getRequest);
-      console.log("MEOW!! This is version" + getRequest)
-    });
-
-    for(var x=1; x<22; x++){
-      getRequest.push("checkboxt" + x);
-      getRequest.push("checkboxs" + x);
-      getRequest.push("skill" + x);
-    };
-
-    for(var y=1; y<10; y++){
-      getRequest.push("attack" + y);
-      getRequest.push("mod" + y);
-      getRequest.push("dmg" + y);
-    };
-
-    getAttrs(getRequest, function(values) {
-        //put your second get request here
-        var newrowattrs = {version: 1.0};
         for(var x=1; x<22; x++){
-          if(values["skill" + x]){
-            var rowId = generateRowID();
-            newrowattrs["repeating_skills_" + rowId + "_skill-name"] = values["skill" + x];
-            if(values["checkboxt" + x]) {
-              newrowattrs["repeating_skills_" + rowId + "_trained-skill"] = values["checkboxt" + x];
-            };
-            if(values["checkboxt" + x]) {
-              newrowattrs["repeating_skills_" + rowId + "_specialized-skill"] = values["checkboxs" + x];
-            };
-          };
+          getRequest.push("checkboxt" + x);
+          getRequest.push("checkboxs" + x);
+          getRequest.push("skill" + x);
         };
+
         for(var y=1; y<10; y++){
-          if(values["attack" + y]){
-            var rowId = generateRowID();
-            newrowattrs["repeating_attacks_" + rowId + "_attack-name"] = values["attack" + y];
-            if(values["mod" + y]) {
-              newrowattrs["repeating_attacks_" + rowId + "_attack-mod"] = values["mod" + y];
-            };
-            if(values["dmg" + y]){
-              newrowattrs["repeating_attacks_" + rowId + "_attack-dmg"] = values["dmg" + y];
+          getRequest.push("attack" + y);
+          getRequest.push("mod" + y);
+          getRequest.push("dmg" + y);
+        };
+
+        getAttrs(getRequest, function(values) {
+          var newrowattrs = {version: 1.0};
+          for(var x=1; x<22; x++){
+            if(values["skill" + x]){
+              var rowId = generateRowID();
+              newrowattrs["repeating_skills_" + rowId + "_skill-name"] = values["skill" + x];
+              if(values["checkboxt" + x]) {
+                newrowattrs["repeating_skills_" + rowId + "_trained-skill"] = values["checkboxt" + x];
+              };
+              if(values["checkboxt" + x]) {
+                newrowattrs["repeating_skills_" + rowId + "_specialized-skill"] = values["checkboxs" + x];
+              };
             };
           };
-        };
-      setAttrs(newrowattrs);
+          for(var y=1; y<10; y++){
+            if(values["attack" + y]){
+              var rowId = generateRowID();
+              newrowattrs["repeating_attacks_" + rowId + "_attack-name"] = values["attack" + y];
+              if(values["mod" + y]) {
+                newrowattrs["repeating_attacks_" + rowId + "_attack-mod"] = values["mod" + y];
+              };
+              if(values["dmg" + y]){
+                newrowattrs["repeating_attacks_" + rowId + "_attack-dmg"] = values["dmg" + y];
+              };
+            };
+          };
+          setAttrs(newrowattrs);
+        });
+      } else(values.version);
+      };
     });
 </script>
