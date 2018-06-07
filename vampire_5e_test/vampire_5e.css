@@ -1,0 +1,24 @@
+.charsheet label {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+    padding-bottom: 0px;
+}
+
+.charsheet input {
+    display: inline-block;
+    width: 160px;
+}
+
+.charsheet {
+    background-color: white;
+}
+
+.charsheet select {
+    width: 42px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-spacing: 5px;
+    padding: 15px
+}
